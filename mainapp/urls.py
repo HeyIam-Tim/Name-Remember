@@ -3,5 +3,5 @@ from . import views
 
 
 urlpatterns = [
-    path('index-api', views.IndexAPI.as_view(), name='index')  
+    path('index-api/', views.IndexAPI.as_view(), name='index')  
 ]
