@@ -40,10 +40,6 @@ class NameRememberDetailAPI(APIView):
         return Response(serializer.data)
         
 
-    def delete(self, request, pk, format=None):
-        name_remember = self.get_object(pk)
-        name_remember.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
 
     def put(self, request, pk, format=None):
         name_remember = self.get_object(pk)
@@ -53,4 +49,8 @@ class NameRememberDetailAPI(APIView):
             return Response(serializer.data)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+    def delete(self, request, pk, format=None):
+        name_remember = self.get_object(pk)
+        name_remember.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
